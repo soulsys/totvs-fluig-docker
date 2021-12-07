@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    container_name: ${MSSQL_CONTAINER_NAME}
+    user: root
+    env_file:
+      - .env    
+    ports: 
+      - ${MSSQL_PORT}:${MSSQL_PORT}
+    volumes:
+      - ${MSSQL_VOLUME}:/var/opt/mssql:delegated
+    networks:
+      - sample-docker-network
+
+  license:
+    image: soulsys/totvs_license:12.1.33
+    container_name: ${LICENSE_CONTAINER_NAME}    
+    user: root
+    env_file:
+      - .env
+    networks:
+      - sample-docker-network
+
+  fluig:
+    image: soulsys/totvs_fluig:1.7.1-211123
+    container_name: ${FLUIG_CONTAINER_NAME}    
+    env_file:
+      - .env
+    ports: 
+      - ${FLUIG_PORT}:${FLUIG_PORT}
+    volumes:
+      - ${FLUIG_VOLUME}:/totvs/volume:delegated
+    networks:
+      - sample-docker-network
+  
+networks:
+  sample-docker-network:
+    external: true

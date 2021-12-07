@@ -1,0 +1,10 @@
+{
+  "name": "totvs-fluig-docker",
+  "version": "1.0.0",
+  "scripts": {
+    "create-network": "docker network create sample-docker-network",
+    "up": "docker-compose up --no-recreate",
+    "stop": "docker-compose stop",
+    "prune": "docker system prune"
+  }
+}
