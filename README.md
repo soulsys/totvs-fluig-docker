@@ -104,3 +104,7 @@ de forma visual através do VS Code
 
 - Acesse a página das [imagens no Docker Hub](https://hub.docker.com/u/soulsys) para conhecer todas 
 as variáveis de ambiente e scripts disponíveis.
+
+## Dúvidas e sugestões ❓
+
+Caso encontre alguma dificuldade ou tenha sugestões de melhorias, não deixe de compartilhar conosco através da seção de [issues](https://github.com/soulsys/totvs-fluig-docker/issues).
