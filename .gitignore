@@ -2,4 +2,5 @@
 .vscode/*
 *.code-workspace
 docker
+volume
 *.log
