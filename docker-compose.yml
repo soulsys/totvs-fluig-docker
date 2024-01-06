@@ -6,6 +6,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: ${MSSQL_CONTAINER_NAME}
     user: root
+    privileged: true
     env_file:
       - .env    
     ports: 
@@ -19,6 +20,7 @@ services:
     image: soulsys/totvs_license:12.1.2210
     container_name: ${LICENSE_CONTAINER_NAME}    
     user: root
+    privileged: true
     env_file:
       - .env
     networks:
@@ -27,6 +29,8 @@ services:
   fluig:
     image: soulsys/totvs_fluig:1.8.0-230314
     container_name: ${FLUIG_CONTAINER_NAME}    
+    user: root
+    privileged: true
     env_file:
       - .env
     ports: 
